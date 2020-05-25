@@ -11,7 +11,7 @@
             $peso = $_POST['peso'];
             $comprimento = $_POST['comprimento'];
             $quantidade = $_POST['quantidade'];
-
+            $preco = Painel::formatarMoedaBd($_POST['preco']);
             $imagens = array();
             $amountFiles = count($_FILES['imagem']['name']);
 
@@ -37,8 +37,8 @@
                         $imagens[] = Painel::uploadFile($imagemAtual);
                     }
 
-                    $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.estoque` VALUES (null,?,?,?,?,?,?,?)");
-                    $sql->execute(array($nome,$descicao,$largura,$altura,$comprimento,$peso,$quantidade));
+                    $sql = MySql::conectar()->prepare("INSERT INTO `tb_admin.estoque` VALUES (null,?,?,?,?,?,?,?,?)");
+                    $sql->execute(array($nome,$descicao,$largura,$altura,$comprimento,$peso,$quantidade,$preco));
                     $lastId = MySql::conectar()->lastInsertId();
                     foreach ($imagens as $key => $value) {
                         MySql::conectar()->exec("INSERT INTO `tb_admin.estoque_imagens` VALUES (null,$lastId,'$value')");
@@ -86,6 +86,11 @@
         <div class="form-group">
             <label>Quantidade Atual do Produto:</label>
 			<input type="number" name="quantidade" min="0" max="900" value="0">
+        </div><!--form-group-->
+
+        <div class="form-group">
+            <label>Preço:</label>
+			<input type="text" name="preco">
         </div><!--form-group-->
         
         <div class="form-group">
