@@ -97,3 +97,44 @@ nav.desktop a{
     margin-top: 10px;
 }
 
+.tabela-pedidos{
+    margin-top: 40px;
+}
+
+.tabela-pedidos h2{
+    margin: 15px 0;
+    border-bottom: 2px solid #4b4b4b;
+    font-size: 24px;
+    color: #4b4b4b;
+}
+
+.tabela-pedidos table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.container tr:first-child td{ /*Pega somento o primeiro item da td*/
+    font-weight: bold;
+}
+
+.tabela-pedidos td{
+    padding: 8px;
+    color: #4b4b4b;
+    border: 1px solid #4b4b4b;
+}
+
+.finalizar-pedido h2{
+    padding: 10px 0;
+    color: #4b4b4b;
+    font-weight: normal;
+    float: right;
+}
+
+.btn-pagamento{
+    display: inline-block;
+    padding: 3px 10px;
+    background-color: #2196f3;
+    color: white;
+    text-decoration: none;
+    float: right;
+}
