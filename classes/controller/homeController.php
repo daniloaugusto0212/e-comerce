@@ -1,12 +1,11 @@
 <?php
 	namespace controller;
+	use\views\mainView;
 
 	class homeController
-	{
-		
-		public function index(){
-			\views\mainView::setParam(['imoveis'=>\models\homeModel::pegaImoveis()]);
-			\views\mainView::render('home.php');
+	{		
+		public function index(){			
+			mainView::render('home.php');
 		}
 	}
 ?>
