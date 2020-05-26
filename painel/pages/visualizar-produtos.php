@@ -91,6 +91,7 @@
                     <p><b> Altura:</b> <?php echo $value['altura']; ?>cm </p>
                     <p><b> Comprimento:</b> <?php echo $value['comprimento']; ?>cm </p>
                     <p><b> Peso:</b> <?php echo $value['peso']; ?>kg </p>
+                    <p><b> Preço:</b> R$<?php echo Painel::convertMoney($value['preco']); ?></p>
                     <div style="padding:8px 0;;border-bottom:1px solid #ccc;" class="group-btn">
                         <form method="post" style="margin:0;">
                             <label for="">Quantidade atual:</label>

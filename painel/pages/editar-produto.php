@@ -36,7 +36,7 @@
             $comprimento = $_POST['comprimento'];
             $peso = $_POST['peso'];
             $quantidade = $_POST['quantidade'];
-
+            $preco = $_POST['preco'];
             $imagens = [];
             
             $sucesso = true;
@@ -66,8 +66,8 @@
                         MySql::conectar()->exec("INSERT INTO `tb_admin.estoque_imagens` VALUES (null,$id,'$value')");
                     }
                 }
-                $sql =  MySql::conectar()->prepare("UPDATE `tb_admin.estoque` SET nome = ?, descricao = ?, altura = ?, largura = ?, comprimento = ?, peso = ?, quantidade = ? WHERE id = $id");
-                $sql->execute(array($nome,$descricao,$altura,$largura,$comprimento,$peso,$quantidade));
+                $sql =  MySql::conectar()->prepare("UPDATE `tb_admin.estoque` SET nome = ?, descricao = ?, altura = ?, largura = ?, comprimento = ?, peso = ?, quantidade = ?, preco = ? WHERE id = $id");
+                $sql->execute(array($nome,$descricao,$altura,$largura,$comprimento,$peso,$quantidade,$preco));
 
                 Painel::alert('sucesso', 'O produto foi atualizado com sucesso!');
                 $id = (int)$_GET['id'];
@@ -110,6 +110,11 @@
  <div class="form-group">
      <label>Peso do Produto:</label>
      <input type="number" name="peso" min="0" max="50000" value="<?php echo $infoProduto['peso'];?>">
+ </div><!--form-group-->
+
+ <div class="form-group">
+     <label>Preço do Produto:</label>
+     <input type="text" name="preco" value="<?php echo Painel::convertMoney($infoProduto['preco']);?>">
  </div><!--form-group-->
 
  <div class="form-group">
