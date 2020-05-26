@@ -51,13 +51,49 @@ nav.desktop a{
 
 .chamada-escolher{
     text-align: center;
-    background: rgb(230, 230, 230);
+    background: #42a5f5;
     padding: 15px 0;
 }
 
 .chamada-escolher h2{
-    color: rgb(126, 122, 122);
+    color:white;
     font-weight: normal;
     font-size: 21px;
+}
+
+
+.lista-items{
+    padding: 40px 0;
+}
+
+.produto-single-box{
+    text-align: center;
+    float: left;
+    width: 33.33%;
+    padding: 0 30px;
+}
+
+
+
+.produto-single-box img{
+    width: 100%;
+}
+
+.produto-single-box p{
+    margin-top: 15px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+    color: #4b4b4b;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.produto-single-box a{
+    color: white;
+    background: #2196f3;
+    text-decoration: none;
+    padding: 3px 6px;
+    display: inline-block;
+    margin-top: 10px;
 }
 
