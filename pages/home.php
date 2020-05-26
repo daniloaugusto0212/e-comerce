@@ -1,3 +1,5 @@
 <div class="chamada-escolher">
-    <h2>Escolha</h2>
+    <div class="container">
+        <h2>Escolha seus produtos e compre agora!</h2> 
+    </div>
 </div>
